@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel=stylesheet href="index.css">
+</head>
+
+<body>
+    <div id="main-container">
+        <h1>HOTDOG or NOT HOTDOG?</h1>
+        <img id="uploaded-img" width="300">
+
+        <div class="buttons">
+            <label for="myImg" class="btns">Select Image</label>
+            <input id="myImg" 
+            class="btns" 
+            type="file" 
+            name="image" 
+            accept="image/*" 
+            onchange="loadImg(event)" 
+            style="visibility: hidden;"/>
+            <button class="btns" onclick="sendImg(event)">Make Prediction</button>
+        </div>
+        <div id="prediction">
+        </div>
+    </div>
+
+</body>
+<script>
+
+    let loadImg = function (event) {
+        let image = document.getElementById("uploaded-img")
+        image.src = URL.createObjectURL(event.target.files[0])
+        image.style.border = "40px solid lightgrey"
+        document.getElementById("prediction").innerHTML = ""
+    }
+
+    let sendImg = function (event) {
+        let file = document.getElementById("myImg").files[0]
+        let prediction = document.getElementById("prediction")
+        console.log(file)
+        let xhttp = new XMLHttpRequest()
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                prediction.innerHTML = "Prediction: " + this.response
+                if(this.response == "NOT HOTDOG"){
+                    prediction.style.color = "red"
+                }
+                else {
+                    prediction.style.color = "green"
+                }
+            }
+        }
+        xhttp.open("POST", "/predict")
+        let data = new FormData()
+        data.append('image', file)
+        xhttp.send(data)
+    }
+
+</script>
+
+</html>

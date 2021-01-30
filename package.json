@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "name": "hotdog_no_hotdog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tensorflow/tfjs": "^2.8.2",
+    "@tensorflow/tfjs-node": "^2.8.2",
+    "express": "^4.17.1",
+    "multer": "^1.4.2"
+  }
+}

@@ -1,0 +1,10 @@
+To convert the keras "h5" model into a node.js/JS compatible model:
+
+install the tensorflowjs package
+    
+    pip install tensorflowjs
+
+run the conversion script specifying the input format, model+directory and the destination directory
+
+    example
+    tensorflowjs_converter --input_format=keras hotdog.h5 /hotdog_no_hotdog/hotdog_model
