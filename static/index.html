@@ -43,7 +43,7 @@
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 prediction.innerHTML = "Prediction: " + this.response
-                if(this.response == "NOT HOTDOG"){
+                if(this.response[0] == "N"){
                     prediction.style.color = "red"
                 }
                 else {
