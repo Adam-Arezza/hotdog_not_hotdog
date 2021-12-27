@@ -1,7 +1,8 @@
 node_modules/
 uploads/
 .vscode/
-hotdog.h5
-train/
-test/
-validate/
+data/
+env/
+*.h5
+images/
+sample_images.py

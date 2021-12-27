@@ -1,5 +1,9 @@
-Link to orignial data source
+Links to orignial data sources
 
 https://www.kaggle.com/dansbecker/hot-dog-not-hot-dog/data
 
 https://www.kaggle.com/yashvrdnjain/hotdognothotdog
+
+https://www.robots.ox.ac.uk/~vgg/data/pets/
+
+http://www.cs.columbia.edu/CAVE/databases/SLAM_coil-20_coil-100/coil-100/coil-100.zip
